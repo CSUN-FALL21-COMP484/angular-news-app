@@ -3,9 +3,10 @@
   }
   
   .example-card{
-      background: #cce6ff;
-      margin: 10px;
-  }
+    background: #cce6ff;
+    margin: 10px;
+}
+ 
   
   .example-header-image { 
     background-size: cover;

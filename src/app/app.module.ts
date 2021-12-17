@@ -18,10 +18,12 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { StoriesComponent } from './stories/stories.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, StoriesComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,7 @@ import { AppComponent } from './app.component';
     MatListModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
  
   ],
   providers: [NewsApiService],
