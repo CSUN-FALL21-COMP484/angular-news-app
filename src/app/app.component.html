@@ -34,7 +34,9 @@
 
 
     <div class="row" id="articles" >
-      <div class="column">    <mat-card class="example-card"  *ngFor="let article of mArticles">
+      <div class="column"> <!--  
+        <mat-card class="example-card"  *ngFor="let article of mArticles">
+        
         <a id="card" href="{{article.url}}" target="_blank">
         <mat-card-header>
           <div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="example-header-image"></div>
@@ -55,9 +57,16 @@
         </mat-card-actions>
       </a>
       </mat-card></div>
+       -->
+       <p>Don't Want to Make too many requests</p>
+       </div>
       <div class="column">
+       
         <div>
-          <app-stories></app-stories>
+          <!--<app-stories></app-stories>-->
+          <p>kjfkjhfjkhfajkfav</p>
+        
+         <app-guardian></app-guardian>
         </div>
 
       </div>

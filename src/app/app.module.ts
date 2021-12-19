@@ -19,14 +19,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { StoriesComponent } from './stories/stories.component';
-import { TechnologyComponent } from './technology/technology.component';
-import { HealthComponent } from './health/health.component';
+import { GuardianComponent } from './guardian/guardian.component';
+
 
 
 
 @NgModule({
   declarations: [
-    AppComponent, StoriesComponent, TechnologyComponent, HealthComponent,
+    AppComponent, StoriesComponent, GuardianComponent, 
   ],
   imports: [
     BrowserModule,
