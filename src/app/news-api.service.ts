@@ -35,4 +35,8 @@ export class NewsApiService {
   getEntertainmentArticles(){
     return this.http.get('https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey='+ this.api_key);
   }
+
+  getCaliforniaArticles(){
+    return this.http.get('https://newsapi.org/v2/everything?q=California&apiKey='+ this.api_key);
+  }
 } 

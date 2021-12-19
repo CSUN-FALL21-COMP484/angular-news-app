@@ -15,6 +15,7 @@ export class AppComponent {
   healthArticles:Array<any>;
   techArticles:Array<any>;
   entertainmentArticles:Array<any>;
+  californiaArticles:Array<any>;
   mArticles:Array<any>;
   mSources:Array<any>;
 
@@ -36,6 +37,8 @@ export class AppComponent {
     this.newsapi.getTechnologyArticles().subscribe(data=> this.techArticles = data['articles']); 
     //load entertianmeent articles
     this.newsapi.getEntertainmentArticles().subscribe(data=> this.entertainmentArticles = data['articles']);
+     //load california articles
+     this.newsapi.getCaliforniaArticles().subscribe(data=> this.californiaArticles = data['articles']);
     }
 
   searchArticles(source: string | String){
