@@ -19,11 +19,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { StoriesComponent } from './stories/stories.component';
+import { TechnologyComponent } from './technology/technology.component';
+import { HealthComponent } from './health/health.component';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent, StoriesComponent
+    AppComponent, StoriesComponent, TechnologyComponent, HealthComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,7 @@ import { StoriesComponent } from './stories/stories.component';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
- 
+    
   ],
   providers: [NewsApiService],
   bootstrap: [AppComponent]
