@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NewsApiService } from './news-api.service';
 
 @Component({
@@ -7,12 +7,16 @@ import { NewsApiService } from './news-api.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
   [x: string]: any;
   title = 'news-app';
+  
+
+  
 
   mArticles:Array<any>;
   mSources:Array<any>;
-
+  likes:Array<number>;
   
 
   constructor(private newsapi:NewsApiService){
@@ -20,6 +24,7 @@ export class AppComponent {
   }
 
   ngOnInit() {
+
     //load articles
     this.newsapi.initArticles().subscribe(data => this.mArticles = data['articles']);
     //load news sources
@@ -34,5 +39,13 @@ export class AppComponent {
     filterValue = filterValue.trim();
     filterValue = filterValue.toLowerCase();
     this['dataSource'].filter = filterValue;
-}
+  }
+  userSearch(userQuery: string){
+  
+    this.newsapi.searchArticles(userQuery).subscribe(data => this.mArticles = data['articles']);
+    
+  }
+
+ 
+
 }
