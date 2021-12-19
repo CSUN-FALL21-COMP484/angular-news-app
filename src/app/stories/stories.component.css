@@ -1,13 +1,23 @@
 .ny-times-container {
     margin: 10px;
- 
 }
 
 .ny-header {
-    background: #cce6ff;
+    background: #85aacc;
     margin: 10px;
+   
 }
 
 p {
     margin: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#test{
+height: 400px;
+overflow-y: scroll;
 }

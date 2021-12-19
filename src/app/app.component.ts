@@ -12,11 +12,13 @@ export class AppComponent {
   title = 'news-app';
   
 
-  
-
+  healthArticles:Array<any>;
+  techArticles:Array<any>;
+  entertainmentArticles:Array<any>;
+  californiaArticles:Array<any>;
   mArticles:Array<any>;
   mSources:Array<any>;
-  likes:Array<number>;
+
   
 
   constructor(private newsapi:NewsApiService){
@@ -29,6 +31,14 @@ export class AppComponent {
     this.newsapi.initArticles().subscribe(data => this.mArticles = data['articles']);
     //load news sources
     this.newsapi.initSources().subscribe(data=> this.mSources = data['sources']);  
+    //load health articles
+    this.newsapi.getHealthArticles().subscribe(data=> this.healthArticles = data['articles']); 
+    //load tech articles
+    this.newsapi.getTechnologyArticles().subscribe(data=> this.techArticles = data['articles']); 
+    //load entertianmeent articles
+    this.newsapi.getEntertainmentArticles().subscribe(data=> this.entertainmentArticles = data['articles']);
+     //load california articles
+     this.newsapi.getCaliforniaArticles().subscribe(data=> this.californiaArticles = data['articles']);
     }
 
   searchArticles(source: string | String){

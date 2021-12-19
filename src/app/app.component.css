@@ -1,17 +1,30 @@
 .example-spacer {
-    flex: 1 1 auto;
-  }
-  
-  .example-card{
-    background: #cce6ff;
-    margin: 10px;
+  flex: 1 1 auto;
 }
- 
   
-  .example-header-image { 
-    background-size: cover;
-
-  }
+.health-card, .national-card, .tech-card, .entertainment-card, .california-card{
+  background: #cce6ff;
+  margin: 10px;
+}
+.health-card {
+  background: #78c992;
+}
+.national-card {
+  background: #d2dd71;
+} 
+.tech-card {
+  background: #73bdd3;
+} 
+.entertainment-card {
+  background: #994988;
+}
+.california-card {
+  color: rgb(122, 21, 21);
+}
+  
+.example-header-image { 
+  background-size: cover;
+}
   
   .title{
       font-weight: bold;
@@ -60,8 +73,22 @@
   
   .row {
     display: flex;
+    height: 1500px;
   }
   
+  h2{
+    margin: 10px;
+    color: rgb(71, 39, 39);
+    font-family: 'Roboto', sans-serif;
+    
+  }
   .column {
     flex: 50%;
+
   }
+
+  #tech, #health, #entertainment, #california {
+    height: 600px;
+    overflow-y: scroll;
+  }
+
