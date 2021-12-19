@@ -6,7 +6,7 @@ import { HttpClient  } from '@angular/common/http';
 })
 export class NewsApiService {
 
- // api_key = 'a2ce595dbd9f4f98bbdc9f06d9dce4dc';
+  //api_key = 'a2ce595dbd9f4f98bbdc9f06d9dce4dc';
   api_key = '3d844b9a333640cfb0393f14fda0470e';
 
   constructor(private http:HttpClient) { }
@@ -26,10 +26,13 @@ export class NewsApiService {
   }
 
   getHealthArticles(){
-    return this.http.get('https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey='+this.api_key);
+    return this.http.get('https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey='+ this.api_key);
   }
 
   getTechnologyArticles(){
-    return this.http.get('https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey='+this.api_key);
+    return this.http.get('https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey='+ this.api_key);
+  }
+  getEntertainmentArticles(){
+    return this.http.get('https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey='+ this.api_key);
   }
 } 

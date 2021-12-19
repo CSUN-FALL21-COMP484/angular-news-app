@@ -1,6 +1,6 @@
-<div class="ny-times-container">
+<div id="test">
   <mat-card class="ny-header" *ngFor ="let story of stories | async">
-
+    <a class="ny-times-container" href="{{story.url}}" target="_blank">
 
     <mat-card-header>
       <mat-card-title class="title">{{story.title}}</mat-card-title>
@@ -15,8 +15,10 @@
       </p>
     </mat-card-content>
 
+  
 
 
+  </a>
 </mat-card>
 </div>
 
