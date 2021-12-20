@@ -9,7 +9,8 @@ export class NewsApiService {
   //Multiple API are listed in case the daily limit is reached
   //api_key = 'a2ce595dbd9f4f98bbdc9f06d9dce4dc';
   //api_key = '3d844b9a333640cfb0393f14fda0470e';
-  api_key = '177650c9866b42bb8a09b353d8689e9d';
+  //api_key = '177650c9866b42bb8a09b353d8689e9d';
+  api_key = '28d7743ed52d4321bb77c8739e4129d6';
 
   constructor(private http:HttpClient) { }
   initSources(){
