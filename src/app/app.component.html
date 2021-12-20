@@ -2,7 +2,8 @@
   <mat-toolbar color="primary">
     <button mat-button (click)="sidenav.open ()" ><mat-icon>menu</mat-icon></button>
     
-    <span>News App</span>  
+      
+    <button mat-button (click)="goHome()" ><span style="font-size: 2em;">News App</span></button>
   
     <span class="example-spacer"></span>
    
@@ -15,7 +16,25 @@
     
   </form>
   </mat-toolbar>
-  
+  <div class="search-container" *ngIf="isSearchShown">
+    <p class="search-term">Showing results for: &nbsp;   "{{searchTerm}}"</p>
+    <mat-card class="search-card"  *ngFor="let article of searchedArticles" >
+      <a id="search" href="{{article.url}}" target="_blank">
+      <mat-card-header>
+        <div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="example-header-image"></div>
+        <mat-card-title class="title">{{article.title}}</mat-card-title>
+        <mat-card-subtitle>{{article.source.name}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image class="img-article" src={{article.urlToImage}} alt="">
+      <mat-card-content>
+        <p>
+          {{article.description}}
+        </p>
+      </mat-card-content>
+    </a>
+    </mat-card>
+
+  </div>
 
 
   <mat-sidenav-container class="example-container">
@@ -31,10 +50,10 @@
     </mat-sidenav>
 
 
-    <div class="row" id="articles" >
+    <div class="row" id="articles" *ngIf="areArticlesShown">
       <div class="column"> 
-        <h2>National News</h2>
-        
+        <h2 id="nat-h2">National News</h2>
+        <div id="national">
         <mat-card class="national-card"  *ngFor="let article of mArticles">
         <a id="card" href="{{article.url}}" target="_blank">
         <mat-card-header>
@@ -51,9 +70,10 @@
       </a>
       </mat-card>
     </div>
+    </div>
        
     <div class="column">
-      <h2>California News</h2>>
+      <h2 id="cal-h2">California News</h2>
       <div id="california">
         <mat-card class="california-card"  *ngFor="let article of californiaArticles">
             <a id="california-card" href="{{article.url}}" target="_blank">
@@ -128,7 +148,7 @@
          
           <mat-card class="entertainment-card"  *ngFor="let article of entertainmentArticles">
         
-            <a id="card" href="{{article.url}}" target="_blank">
+            <a id="national-card" href="{{article.url}}" target="_blank">
             <mat-card-header>
               <div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="example-header-image"></div>
               <mat-card-title class="title">{{article.title}}</mat-card-title>
@@ -147,6 +167,27 @@
       </div>
 
     </div>
+
+    <div class="by-source-container" *ngIf="isListBySourceShown">
+      <p class="by-source-term">Showing articles from: &nbsp;   "{{sourceName}}"</p>
+      <mat-card class="by-source-card"  *ngFor="let article of articlesBySource" >
+        <a id="by-source-card" href="{{article.url}}" target="_blank">
+        <mat-card-header>
+          <div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="example-header-image"></div>
+          <mat-card-title class="title">{{article.title}}</mat-card-title>
+          <mat-card-subtitle>{{article.source.name}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image class="img-article" src={{article.urlToImage}} alt="">
+        <mat-card-content>
+          <p>
+            {{article.description}}
+          </p>
+        </mat-card-content>
+      </a>
+      </mat-card>
+  
+    </div>
+
 
   </mat-sidenav-container>
 </body>
