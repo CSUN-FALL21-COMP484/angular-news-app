@@ -6,7 +6,7 @@ import { HttpClient  } from '@angular/common/http';
 })
 export class NewsApiService {
 
-  //Multiple API are listed in case the daily limit is reached
+  //Multiple API are listed in case the daily article limit is reached
   //api_key = 'a2ce595dbd9f4f98bbdc9f06d9dce4dc';
   //api_key = '3d844b9a333640cfb0393f14fda0470e';
   //api_key = '177650c9866b42bb8a09b353d8689e9d';
