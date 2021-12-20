@@ -86,6 +86,22 @@ a {
   height: 75%;
   align-items: center;
   justify-content: center;
+ 
+}
+.example-sidenav {
+  background: white;
+  
+}
+
+.toolbar button {
+  background: #3f51b5;
+  color: white;
+}
+
+.toolbar {
+  background: #3f51b5;
+  color: white;
+  height: 65px;
 }
   
 .example-sidenav {
