@@ -18,8 +18,14 @@ export class AppComponent {
   californiaArticles:Array<any>;
   mArticles:Array<any>;
   mSources:Array<any>;
+  searchedArticles:Array<any>;
+  articlesBySource:Array<any>;
 
-  
+  isSearchShown: boolean = false;
+  areArticlesShown: boolean = true;
+  searchTerm: string;
+  sourceName: any;
+  isListBySourceShown: boolean = false;
 
   constructor(private newsapi:NewsApiService){
     console.log('app component constructor called');         
@@ -42,8 +48,11 @@ export class AppComponent {
     }
 
   searchArticles(source: string | String){
-    console.log("selected source is: "+source);
-    this.newsapi.getArticlesByID(source).subscribe(data => this.mArticles = data['articles']);
+    this.areArticlesShown = false;
+    this.sourceName = source
+    console.log("selected source is: "+ source);
+    this.newsapi.getArticlesByID(source).subscribe(data => this.articlesBySource = data['articles']);
+    this.isListBySourceShown = true;
   }
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim();
@@ -51,11 +60,17 @@ export class AppComponent {
     this['dataSource'].filter = filterValue;
   }
   userSearch(userQuery: string){
-  
-    this.newsapi.searchArticles(userQuery).subscribe(data => this.mArticles = data['articles']);
+    this.searchTerm = userQuery
+    this.areArticlesShown = false;
+    this.newsapi.searchArticles(userQuery).subscribe(data => this.searchedArticles = data['articles']);
+    this.isSearchShown = true
     
   }
-
+  goHome(){
+    this.isSearchShown = false;
+    this.isListBySourceShown = false;
+    this.areArticlesShown = true;
+  }
  
 
 }

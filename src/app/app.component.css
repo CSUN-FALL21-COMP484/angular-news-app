@@ -1,94 +1,139 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+h2, .search-term, .by-source-term{
+  color: black;
+  font-family: 'Roboto', sans-serif;
+}
   
-.health-card, .national-card, .tech-card, .entertainment-card, .california-card{
+.health-card, .national-card, .tech-card, .entertainment-card, .california-card, .search-card, .by-source-card{
   background: #cce6ff;
   margin: 10px;
 }
 .health-card {
-  background: #78c992;
+  background: linear-gradient(to right, #66ccff -2%, #ff9999 91%);
 }
 .national-card {
-  background: #d2dd71;
-} 
+  background: linear-gradient(to right, #66ffff -2%, #ccffff 91%);
+}
 .tech-card {
-  background: #73bdd3;
+  background: linear-gradient(to right, #ffcccc 1%, #99ccff 108%);
 } 
 .entertainment-card {
-  background: #994988;
+  background: linear-gradient(to right, #ffffcc -2%, #660066 117%);
 }
 .california-card {
-  color: rgb(122, 21, 21);
+  background: linear-gradient(to right, #ffff66 1%, #99ccff 108%);
+  margin-top: 0;
 }
+.search-card, .by-source-card{
+  background: linear-gradient(to bottom right, #99ffcc 0%, #ccff99 100%);
+  margin-bottom: 20px;
+}
+.search-container, .by-source-container{
+  margin: 0 100px;
+}
+
+.search-term, .by-source-term{
+  font-size: 3em;
+}
+
+#tech, #health, #entertainment, #california {
+  height: 600px;
+  overflow-y: scroll;
+}
+
+#national {
+  height: 3360px;
+  overflow-y: scroll;
+}
+
+
   
 .example-header-image { 
   background-size: cover;
 }
   
-  .title{
-      font-weight: bold;
-  }
-  
-  .img-article{
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 50%
-  }
-  
-  .action-buttons{
-      text-align: center;
-  }
-  a {
-    text-decoration: none;
-    color: black;
+.title{
+  font-weight: bold;
 }
-  .example-container {
-      width: 100%;
-      height: auto;
-     border: 1px solid rgba(111, 111, 111, 0.50);
-  }
   
-  .example-sidenav-content {
-      display: flex;
-      height: 75%;
-      align-items: center;
-      justify-content: center;
-  }
+.img-article{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%
+}
   
-  .example-sidenav {
-      padding: 20px;
-  }
-  
-  .source-name {
-      margin-left:5px; 
-  }
-  
-  .list-item:hover{
-      cursor: pointer;
-      background-color: #3f51b5;
-      color: white;
-  }
-  
-  .row {
-    display: flex;
-    height: 1500px;
-  }
-  
-  h2{
-    margin: 10px;
-    color: rgb(71, 39, 39);
-    font-family: 'Roboto', sans-serif;
-    
-  }
-  .column {
-    flex: 50%;
+.action-buttons{
+  text-align: center;
+}
 
-  }
+a {
+  text-decoration: none;
+  color: black;
+}
+  
+.example-container {
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(111, 111, 111, 0.50);
+}
+  
+.example-sidenav-content {
+  display: flex;
+  height: 75%;
+  align-items: center;
+  justify-content: center;
+}
+  
+.example-sidenav {
+  padding: 20px;
+}
+  
+.source-name {
+  margin-left:5px; 
+}
+  
+.list-item:hover{
+  cursor: pointer;
+  background-color: #3f51b5;
+  color: white;
+}
+  
+.row {
+  display: flex;
+}
 
-  #tech, #health, #entertainment, #california {
-    height: 600px;
-    overflow-y: scroll;
-  }
+#nat-h2, #cal-h2 {
+  margin-top: 0;
+}
 
+  
+h2{
+  margin-left: 15px;
+  margin-top: 25px;
+  font-size: 2em;
+}
+
+.column {
+  flex: 50%;
+  margin-bottom: 15px;
+  margin: 30px;
+}
+
+
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25); 
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+  cursor: grab;
+}
