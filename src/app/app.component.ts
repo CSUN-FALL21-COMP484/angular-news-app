@@ -49,6 +49,8 @@ export class AppComponent {
 
   searchArticles(source: string | String){
     this.areArticlesShown = false;
+    this.isSearchShown = false;
+
     this.sourceName = source
     console.log("selected source is: "+ source);
     this.newsapi.getArticlesByID(source).subscribe(data => this.articlesBySource = data['articles']);
@@ -62,6 +64,7 @@ export class AppComponent {
   userSearch(userQuery: string){
     this.searchTerm = userQuery
     this.areArticlesShown = false;
+    this.isListBySourceShown = false;
     this.newsapi.searchArticles(userQuery).subscribe(data => this.searchedArticles = data['articles']);
     this.isSearchShown = true
     

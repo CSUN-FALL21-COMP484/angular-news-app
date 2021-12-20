@@ -16,25 +16,7 @@
     
   </form>
   </mat-toolbar>
-  <div class="search-container" *ngIf="isSearchShown">
-    <p class="search-term">Showing results for: &nbsp;   "{{searchTerm}}"</p>
-    <mat-card class="search-card"  *ngFor="let article of searchedArticles" >
-      <a id="search" href="{{article.url}}" target="_blank">
-      <mat-card-header>
-        <div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="example-header-image"></div>
-        <mat-card-title class="title">{{article.title}}</mat-card-title>
-        <mat-card-subtitle>{{article.source.name}}</mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image class="img-article" src={{article.urlToImage}} alt="">
-      <mat-card-content>
-        <p>
-          {{article.description}}
-        </p>
-      </mat-card-content>
-    </a>
-    </mat-card>
 
-  </div>
 
 
   <mat-sidenav-container class="example-container">
@@ -172,6 +154,26 @@
       <p class="by-source-term">Showing articles from: &nbsp;   "{{sourceName}}"</p>
       <mat-card class="by-source-card"  *ngFor="let article of articlesBySource" >
         <a id="by-source-card" href="{{article.url}}" target="_blank">
+        <mat-card-header>
+          <div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="example-header-image"></div>
+          <mat-card-title class="title">{{article.title}}</mat-card-title>
+          <mat-card-subtitle>{{article.source.name}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image class="img-article" src={{article.urlToImage}} alt="">
+        <mat-card-content>
+          <p>
+            {{article.description}}
+          </p>
+        </mat-card-content>
+      </a>
+      </mat-card>
+  
+    </div>
+
+    <div class="search-container" *ngIf="isSearchShown">
+      <p class="search-term">Showing results for: &nbsp;   "{{searchTerm}}"</p>
+      <mat-card class="search-card"  *ngFor="let article of searchedArticles" >
+        <a id="search" href="{{article.url}}" target="_blank">
         <mat-card-header>
           <div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="example-header-image"></div>
           <mat-card-title class="title">{{article.title}}</mat-card-title>
