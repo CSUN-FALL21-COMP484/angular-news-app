@@ -10,7 +10,9 @@ export class NewsApiService {
   api_key = 'a2ce595dbd9f4f98bbdc9f06d9dce4dc';
   //api_key = '177650c9866b42bb8a09b353d8689e9d';
   //api_key = '3d844b9a333640cfb0393f14fda0470e';
-  
+
+  //unused key
+  //api_key = '3b2e97de2d114258a2d24029bed26822';
 
 
   constructor(private http:HttpClient) { }
